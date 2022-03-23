@@ -76,6 +76,8 @@ public class TourneControler implements Initializable
     public void choixAlgo(ActionEvent actionEvent)
     {
         this.champCout.setText("Non calculé");
+        this.listVilles.getItems().clear();
+        this.tailleVilles.setText("0");
         this.nomTournee.setText(this.selectTourne.getSelectionModel().getSelectedItem().getNomAlgoTourne());
     }
 }
