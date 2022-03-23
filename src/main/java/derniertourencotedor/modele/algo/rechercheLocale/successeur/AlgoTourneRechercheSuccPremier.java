@@ -19,13 +19,14 @@ public class AlgoTourneRechercheSuccPremier extends AlgoTourneRechercheLocale
     {
         ArrayList<Ville> villes = new ArrayList<>(tourneCourante.getTourneesVilles());
         Tourne tourne = new Tourne(villes);
-        for (int i = 1; i < tourneCourante.tailleTourne()-2; i++)
+        boolean fini = false;
+        for (int i = 0; i < tourneCourante.tailleTourne() && !fini; i++)
         {
-            double distance1 =
-                    villes.get(i - 1).distanceAvecVille(villes.get(i)) + villes.get(i+1).distanceAvecVille(villes.get(i+2));
-            double distance2 =
-                    villes.get(i - 1).distanceAvecVille(villes.get(i+1)) + villes.get(i).distanceAvecVille(villes.get(i+2));
-            if(distance1 > distance2) tourne.intervertirVilles(villes.get(i), villes.get(i+1));
+            Ville ville1 = tourne.getTourneesVilles().get(i);
+            Ville ville2 = tourne.getTourneesVilles().get((i+1)%tourne.tailleTourne());
+            tourne = intervertirSiCoutMeilleur(tourne, ville1, ville2);
+            //si on a trouvé une meilleure tournée
+            if(tourne.getCout() < tourneCourante.getCout()) fini = true;
         }
         return tourne;
     }

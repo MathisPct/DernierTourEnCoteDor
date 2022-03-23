@@ -12,6 +12,7 @@ public enum NomAlgoTourne
     RECHERCHE2OPTMEILLEUR("Recherche 2opt meilleur"),
     RECHERCHE2OPTPREMIER("Recherche 2opt premier"),
     RECHERCHESOMMETPREMIER("Recherche sommet premier quelconque"),
+    RECHERCHESOMMETMEILLEUR("Recherche sommet meilleur quelconque"),
     RECHERCHESUCCPREMIER("Recherche successeur premier"),
     RECHERCHESUCCMEILLEUR("Recherche successeur meilleur"),
     INSERTIONPROCHE("Insertion proche"),

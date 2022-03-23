@@ -3,6 +3,9 @@ package derniertourencotedor.modele.algo.rechercheLocale;
 import derniertourencotedor.modele.entite.Tourne;
 import derniertourencotedor.modele.VillesParser;
 import derniertourencotedor.modele.algo.AlgoTourne;
+import derniertourencotedor.modele.entite.Ville;
+
+import java.util.ArrayList;
 
 public abstract class AlgoTourneRechercheLocale extends AlgoTourne
 {
@@ -43,6 +46,22 @@ public abstract class AlgoTourneRechercheLocale extends AlgoTourne
             }
         }
         return tourneCourante;
+    }
+
+    /**
+     * Interverti les 2 villes passées en paramètre si le coût après inversion et inférieure au coût avant inversion
+     * @param tourneVillesNonInversees la tournée avec les ville1 et ville2 non inversées
+     * @param ville1 ville à inverser avec la ville 2
+     * @param ville2 ville à inverser avec la ville 1
+     * @return la tournée inversée ou non inversée suivant comment s'est déroulé la condition
+     */
+    protected Tourne intervertirSiCoutMeilleur(Tourne tourneVillesNonInversees, Ville ville1, Ville ville2)
+    {
+        Tourne tourneVillesInversees = new Tourne(new ArrayList<>(tourneVillesNonInversees.getTourneesVilles()));
+        tourneVillesInversees.intervertirVilles(ville1, ville2);
+        if(tourneVillesInversees.getCout() < tourneVillesNonInversees.getCout())
+            tourneVillesNonInversees = tourneVillesInversees;
+        return tourneVillesNonInversees;
     }
 
     protected abstract Tourne explorerVoisinage(Tourne tourneCourante);
