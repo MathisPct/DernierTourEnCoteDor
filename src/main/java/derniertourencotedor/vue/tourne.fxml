@@ -18,7 +18,7 @@
                <children>
                   <VBox fx:id="tourneContainer" prefHeight="300.0" prefWidth="216.0" spacing="20.0">
                      <children>
-                        <ComboBox fx:id="selectTourne" prefHeight="26.0" prefWidth="224.0" />
+                        <ComboBox fx:id="selectTourne" onAction="#choixAlgo" prefHeight="26.0" prefWidth="224.0" />
                         <Button mnemonicParsing="false" onAction="#calculerTourner" prefHeight="26.0" prefWidth="226.0" text="Calculer coût" />
                         <HBox alignment="CENTER_LEFT" prefHeight="26.0" prefWidth="181.0" spacing="5.0">
                            <children>

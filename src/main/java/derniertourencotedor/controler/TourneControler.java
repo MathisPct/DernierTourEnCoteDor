@@ -50,7 +50,6 @@ public class TourneControler implements Initializable
             AlgoTourne algoTourne = FabriqueAlgoTourne.fabriquerAlgoTourne(selectTourne.getValue(), villesParser);
             Tourne tourneEffectue = algoTourne.effectuerTourne();
             this.champCout.setText(String.valueOf(tourneEffectue.getCout()));
-            this.nomTournee.setText(this.selectTourne.getSelectionModel().getSelectedItem().getNomAlgoTourne());
             afficherVilles(tourneEffectue.getTourneesVilles());
             this.tailleVilles.setText(String.valueOf(tourneEffectue.getTourneesVilles().size()));
         }catch (Exception e)
@@ -68,5 +67,15 @@ public class TourneControler implements Initializable
     private void verifierSiSelectionEstBonne() throws Exception
     {
         if(selectTourne.getValue() == null) throw new Exception("Veuillez choisir une tournée");
+    }
+
+    /**
+     * Lorsque l'user clique sur un nouvel algo dans la liste
+     * @param actionEvent
+     */
+    public void choixAlgo(ActionEvent actionEvent)
+    {
+        this.champCout.setText("Non calculé");
+        this.nomTournee.setText(this.selectTourne.getSelectionModel().getSelectedItem().getNomAlgoTourne());
     }
 }
