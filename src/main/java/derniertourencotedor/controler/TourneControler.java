@@ -23,17 +23,17 @@ import java.util.ResourceBundle;
 public class TourneControler implements Initializable
 {
     @FXML
-    public Label champCout;
+    private Label champCout;
     @FXML
-    public ComboBox<NomAlgoTourne> selectTourne;
+    private ComboBox<NomAlgoTourne> selectTourne;
     @FXML
-    public ListView listVilles;
+    private ListView listVilles;
     @FXML
-    public Label nomTournee;
+    private Label nomTournee;
     @FXML
-    public VBox tourneContainer;
+    private VBox tourneContainer;
     @FXML
-    public Label tailleVilles;
+    private Label tailleVilles;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle)
