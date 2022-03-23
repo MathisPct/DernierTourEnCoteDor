@@ -53,17 +53,17 @@ public class Ville
      * @param villeArrive vers laquelle on veut aller
      * @return la distance entre la ville courante et la ville passée en paramètre
      */
-    public float distanceAvecVille(Ville villeArrive)
+    public double distanceAvecVille(Ville villeArrive)
     {
         assert (villeArrive!= null);
-        float distance = 0f;
+        double distance;
         int r = 6371; //radian de la terre
         //coordonnées des villes exprimées en radian
         double lon1 = Math.toRadians(this.getLongitude());
         double lon2 = Math.toRadians(villeArrive.getLongitude());
         double lat1 = Math.toRadians(this.getLatitude());
         double lat2 = Math.toRadians(villeArrive.getLatitude());
-        distance =  (float) abs(r * acos( (sin(lat1) * sin(lat2))  + ( cos(lat1) * cos(lat2) * cos(lon2-lon1) ) ) );
+        distance =  abs(r * acos( (sin(lat1) * sin(lat2))  + ( cos(lat1) * cos(lat2) * cos(lon2-lon1) ) ) );
         return distance;
     }
 
@@ -74,11 +74,11 @@ public class Ville
      * @param villeArrivee vers laquelle on veut aller
      * @return la distance en faisant le détour par la ville courante
      */
-    public float coutDetour(Ville villeDepart, Ville villeArrivee)
+    public double coutDetour(Ville villeDepart, Ville villeArrivee)
     {
-        float distanceAV = villeDepart.distanceAvecVille(this);
-        float distanceVB = this.distanceAvecVille(villeArrivee);
-        float distanceAB = villeDepart.distanceAvecVille(villeArrivee);
+        double distanceAV = villeDepart.distanceAvecVille(this);
+        double distanceVB = this.distanceAvecVille(villeArrivee);
+        double distanceAB = villeDepart.distanceAvecVille(villeArrivee);
         return distanceAV + distanceVB - distanceAB;
     }
 
@@ -87,9 +87,9 @@ public class Ville
      * @param tourne contenant les villes de la tournée actuelle
      * @return le coût minimum d'insertion entre i et i+1
      */
-    public float distanceAvecTourne(Tourne tourne)
+    public double distanceAvecTourne(Tourne tourne)
     {
-        float coutMinimum = Float.POSITIVE_INFINITY;
+        double coutMinimum = Double.POSITIVE_INFINITY;
         for (int i = 0; i < tourne.getTourneesVilles().size(); i++)
         {
             Ville ville1 = tourne.getTourneesVilles().get(i);
@@ -97,7 +97,7 @@ public class Ville
             //si on est à la fin de la liste on prend la première ville
             if(i == tourne.getTourneesVilles().size()-1) ville2 = tourne.getTourneesVilles().get(0);
             else ville2 = tourne.getTourneesVilles().get(i + 1);
-            float coutCourant = this.coutDetour(ville1, ville2);
+            double coutCourant = this.coutDetour(ville1, ville2);
             if (coutCourant < coutMinimum)
             {
                 coutMinimum = coutCourant;

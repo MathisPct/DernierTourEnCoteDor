@@ -23,9 +23,9 @@ public class AlgoTourneRechercheSuccMeilleur extends AlgoTourneRechercheLocale
         ArrayList<Tourne> tournes = new ArrayList<>();
         for (int i = 1; i < voisin.tailleTourne() - 2; i++)
         {
-            float distance1 =
+            double distance1 =
                     villes.get(i - 1).distanceAvecVille(villes.get(i)) + villes.get(i+1).distanceAvecVille(villes.get(i+2));
-            float distance2 =
+            double distance2 =
                     villes.get(i - 1).distanceAvecVille(villes.get(i+1)) + villes.get(i).distanceAvecVille(villes.get(i+2));
             if(distance1 > distance2) tournes.add(voisin.intervertirVilles(villes.get(i), villes.get(i+1)));
 

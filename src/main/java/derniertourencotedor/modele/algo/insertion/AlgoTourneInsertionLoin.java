@@ -23,8 +23,8 @@ public class AlgoTourneInsertionLoin extends AlgoTourneInsertion
         villesNonVisites.removeAll(villesPlusEloignes);
         villesPlusEloignes.forEach((tourneInsertionLoin::ajouterVille));
         Ville villeAInserer = null;
-        float coutMax;
-        float distanceCourante;
+        double coutMax;
+        double distanceCourante;
         while (!villesNonVisites.isEmpty())
         {
             coutMax = 0;

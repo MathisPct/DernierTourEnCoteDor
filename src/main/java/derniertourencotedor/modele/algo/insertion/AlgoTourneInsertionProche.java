@@ -23,11 +23,11 @@ public class AlgoTourneInsertionProche extends AlgoTourneInsertion
         villesNonVisites.removeAll(villesPlusEloignes);
         villesPlusEloignes.forEach((tourneInsertionProche::ajouterVille));
         Ville villeAInserer = null;
-        float coutMinimum;
-        float distanceCourante;
+        double coutMinimum;
+        double distanceCourante;
         while (!villesNonVisites.isEmpty())
         {
-            coutMinimum = Float.POSITIVE_INFINITY;
+            coutMinimum = Double.POSITIVE_INFINITY;
             for (Ville v: villesNonVisites)
             {
                 //on calcule la distance ajoutée à la tournée par l'insertion de v entre i et i+1

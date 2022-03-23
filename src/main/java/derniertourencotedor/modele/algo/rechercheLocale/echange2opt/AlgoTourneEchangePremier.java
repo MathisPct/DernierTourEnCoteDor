@@ -26,9 +26,9 @@ public class AlgoTourneEchangePremier extends AlgoTourneRechercheLocale
             {
                 //toute position j > i+1
 
-                    float distance1 =
+                    double distance1 =
                             villes.get(i).distanceAvecVille(villes.get(i+1)) + villes.get(j).distanceAvecVille(villes.get((j+1)%tourneCourante.tailleTourne()));
-                    float distance2 =
+                    double distance2 =
                             villes.get(i).distanceAvecVille(villes.get(j)) + villes.get(i+1).distanceAvecVille(villes.get((j+1)%tourneCourante.tailleTourne()));
                     if(distance1 > distance2)
                     {

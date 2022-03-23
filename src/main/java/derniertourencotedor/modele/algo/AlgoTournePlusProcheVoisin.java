@@ -39,10 +39,10 @@ public class AlgoTournePlusProcheVoisin extends AlgoTourne
     {
         Ville villePlusProche = villes.get(0);
         //distance entre la ville de départ et la première voisine
-        float distanceMinimale = villeDepart.distanceAvecVille(villePlusProche);
+        double distanceMinimale = villeDepart.distanceAvecVille(villePlusProche);
         for(Ville villeVoisine: villes)
         {
-            float distanceEntre2Ville = villeDepart.distanceAvecVille(villeVoisine);
+            double distanceEntre2Ville = villeDepart.distanceAvecVille(villeVoisine);
             if(distanceEntre2Ville < distanceMinimale)
             {
                 villePlusProche = villeVoisine;

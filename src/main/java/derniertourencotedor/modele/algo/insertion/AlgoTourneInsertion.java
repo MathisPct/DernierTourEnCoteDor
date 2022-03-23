@@ -26,11 +26,11 @@ public abstract class AlgoTourneInsertion extends AlgoTourne
     {
         Ville villePlusEloigne1 = villes.get(0);
         Ville villePlusEloigne2 = villes.get(1);
-        float distanceMax = 0;
+        double distanceMax = 0;
         for (int i = 0; i < villes.size() - 1; i++)
         {
             for (Ville ville : villes) {
-                float distanceCourante = villes.get(i).distanceAvecVille(ville);
+                double distanceCourante = villes.get(i).distanceAvecVille(ville);
                 if (distanceCourante > distanceMax) {
                     distanceMax = distanceCourante;
                     villePlusEloigne1 = villes.get(i);
