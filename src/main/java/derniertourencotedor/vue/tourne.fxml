@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="derniertourencotedor.controler.MainControler">
+<AnchorPane xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="derniertourencotedor.controler.TourneControler">
    <children>
       <VBox alignment="CENTER" layoutX="13.0" layoutY="17.0">
          <children>

@@ -1,6 +1,5 @@
 package derniertourencotedor.controler;
 
-import derniertourencotedor.App;
 import derniertourencotedor.modele.VillesParser;
 import derniertourencotedor.modele.algo.AlgoTourne;
 import derniertourencotedor.modele.algo.fabrique.FabriqueAlgoTourne;
@@ -11,21 +10,17 @@ import derniertourencotedor.vue.UtilsIHM;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
-import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
-import javafx.stage.FileChooser;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
-public class MainControler implements Initializable
+public class TourneControler implements Initializable
 {
     @FXML
     public Label champCout;

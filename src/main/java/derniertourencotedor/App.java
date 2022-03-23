@@ -21,7 +21,7 @@ public class App extends Application {
     @Override
     public void start(Stage stage) throws IOException
     {
-        URL fxmlFile = new File("src/main/java/derniertourencotedor/vue/main.fxml").toURI().toURL();
+        URL fxmlFile = new File("src/main/java/derniertourencotedor/vue/tourne.fxml").toURI().toURL();
         Parent root = FXMLLoader.load(fxmlFile);
         Scene scene = new Scene(root);
         stage.setTitle("DernierTourEnCoteDor");
