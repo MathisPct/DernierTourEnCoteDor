@@ -16,7 +16,7 @@ class AlgoTournePlusProcheVoisinTest
         VillesParser villesParserAvecFichier = new VillesParser(new File("top80.txt"));
         AlgoTourne algoTournePlusProcheVoisin = new AlgoTournePlusProcheVoisin(villesParserAvecFichier);
         Tourne tourne = algoTournePlusProcheVoisin.effectuerTourne();
-        float coutObtenu = tourne.getCout();
+        double coutObtenu = tourne.getCout();
         Assert.assertEquals(712.76, coutObtenu, 0.1f);
     }
 }

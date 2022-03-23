@@ -18,7 +18,7 @@ class AlgoTourneCroissanteTest
         AlgoTourne tourneRechercheLocale =
                 new AlgoTourneCroissante(villesParserAvecFichier);
         Tourne tourneObtenu = tourneRechercheLocale.effectuerTourne();
-        float coutObtenu = tourneObtenu.getCout();
+        double coutObtenu = tourneObtenu.getCout();
         Assert.assertEquals(2688.19, coutObtenu, 0.1f);
     }
 }

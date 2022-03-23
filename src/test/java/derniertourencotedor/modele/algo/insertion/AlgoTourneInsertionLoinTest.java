@@ -17,6 +17,6 @@ class AlgoTourneInsertionLoinTest
         VillesParser villesParserAvecFichier = new VillesParser(new File("top80.txt"));
         AlgoTourne tourneInsertionLoin = new AlgoTourneInsertionLoin(villesParserAvecFichier);
         Tourne tourne = tourneInsertionLoin.effectuerTourne();
-        float coutObtenu = tourne.getCout();
+        double coutObtenu = tourne.getCout();
         Assert.assertEquals(599.16, coutObtenu, 0.1f);
     }}

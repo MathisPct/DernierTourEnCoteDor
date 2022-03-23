@@ -38,10 +38,10 @@ public class AlgoTourneRechercheSuccMeilleur extends AlgoTourneRechercheLocale
     private Tourne meilleurVoisin(ArrayList<Tourne> tournes)
     {
         Tourne meilleurTourne = tournes.get(0);
-        float coutMinimal = Float.POSITIVE_INFINITY;
+        double coutMinimal = Double.POSITIVE_INFINITY;
         for(Tourne tourne: tournes)
         {
-            float coutMinimalCourant = tourne.getCout();
+            double coutMinimalCourant = tourne.getCout();
             if(coutMinimalCourant < coutMinimal)
             {
                 meilleurTourne = tourne;

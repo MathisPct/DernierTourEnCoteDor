@@ -22,7 +22,7 @@ class AlgoTourneRechercheSuccMeilleurTest {
         AlgoTourneRechercheLocale tourneRechercheLocale =
                 new AlgoTourneRechercheSuccMeilleur(villesParserAvecFichier, tourne);
         Tourne tourneObtenu = tourneRechercheLocale.effectuerTourne();
-        float coutObtenu = tourneObtenu.getCout();
+        double coutObtenu = tourneObtenu.getCout();
         Assert.assertEquals(697.86, coutObtenu, 0.1f);
     }
 }

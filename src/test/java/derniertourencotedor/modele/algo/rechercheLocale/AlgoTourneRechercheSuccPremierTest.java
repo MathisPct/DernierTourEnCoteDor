@@ -21,7 +21,7 @@ class AlgoTourneRechercheSuccPremierTest
         AlgoTourneRechercheLocale tourneRechercheLocale =
                 new AlgoTourneRechercheSuccPremier(villesParserAvecFichier, tourne);
         Tourne tourneObtenu = tourneRechercheLocale.effectuerTourne();
-        float coutObtenu = tourneObtenu.getCout();
+        double coutObtenu = tourneObtenu.getCout();
         Assert.assertEquals(706.04, coutObtenu, 0.1f);
     }
 }

@@ -9,15 +9,15 @@ import java.util.List;
  */
 public class Tourne
 {
-    private final ArrayList<Ville> tourneesVilles;
+    private ArrayList<Ville> tourneesVilles;
 
     /**
      * Calcule la distance totale de la tournée
      * @return la distance
      */
-    public float getCout()
+    public double getCout()
     {
-        float cout = 0f;
+        double cout = 0d;
         for (int i = 0; i < this.tourneesVilles.size()-1; i++)
         {
             Ville ville1 = tourneesVilles.get(i);
@@ -110,12 +110,13 @@ public class Tourne
     @Override
     public String toString()
     {
-        StringBuilder villes = new StringBuilder();
+        /*StringBuilder villes = new StringBuilder();
         for (Ville ville : tourneesVilles)
         {
            villes.append(ville.toString()).append("\n");
         }
-        return villes.toString();
+        return villes.toString();*/
+        return tourneesVilles.toString();
     }
 
     /**
@@ -127,9 +128,14 @@ public class Tourne
      */
     public void retournerTroncon(int indexDebutTroncon, int indexFinTroncon)
     {
-        //on récupère les villes du tronçon à inverser
+        ArrayList<Ville> newList = new ArrayList<>();
+        for(int i=0;i<indexDebutTroncon;i++) newList.add(this.tourneesVilles.get(i));
+        for(int i=indexFinTroncon;i>=indexDebutTroncon;i--) newList.add(this.tourneesVilles.get(i));
+        for(int i=indexFinTroncon+1;i<this.tourneesVilles.size();i++) newList.add(this.tourneesVilles.get(i));
+        /*//on récupère les villes du tronçon à inverser
         List<Ville> tronconInverse = getTourneesVilles().subList(indexDebutTroncon, indexFinTroncon+1);
         //on inverse les villes du tronçon
-        Collections.reverse(tronconInverse);
+        Collections.reverse(tronconInverse);*/
+        this.tourneesVilles = newList;
     }
 }

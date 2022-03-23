@@ -17,7 +17,7 @@ class AlgoTourneInsertionProcheTest
         VillesParser villesParserAvecFichier = new VillesParser(new File("top80.txt"));
         AlgoTourne tourneeInsertionProche = new AlgoTourneInsertionProche(villesParserAvecFichier);
         Tourne tourne = tourneeInsertionProche.effectuerTourne();
-        float coutObtenu = tourne.getCout();
+        double coutObtenu = tourne.getCout();
         Assert.assertEquals(618.10, coutObtenu, 0.1f);
     }
 }

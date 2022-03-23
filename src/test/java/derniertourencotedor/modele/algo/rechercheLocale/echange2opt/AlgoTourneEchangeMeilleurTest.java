@@ -21,7 +21,7 @@ class AlgoTourneEchangeMeilleurTest
         AlgoTourneRechercheLocale tourneRechercheLocale =
                 new AlgoTourneEchangeMeilleur(villesParserAvecFichier, tourne);
         Tourne tourneObtenu = tourneRechercheLocale.effectuerTourne();
-        float coutObtenu = tourneObtenu.getCout();
+        double coutObtenu = tourneObtenu.getCout();
         Assert.assertEquals(557.60, coutObtenu, 0.1f);
     }
 }
