@@ -6,13 +6,25 @@ package derniertourencotedor.modele.algo.fabrique;
  */
 public enum NomAlgoTourne
 {
-    ALEATOIRE,
-    PLUSPROCHEVOISIN,
-    CROISSANTE,
-    RECHERCHE2OPTPREMIER,
-    RECHERCHESOMMETPREMIER,
-    RECHERCHESUCCPREMIER,
-    RECHERCHESUCCMEILLEUR,
-    INSERTIONPROCHE,
-    INSERTIONLOIN
+    ALEATOIRE("Aléatoire"),
+    PLUSPROCHEVOISIN("Plus proche voisin"),
+    CROISSANTE("Croissante"),
+    RECHERCHE2OPTPREMIER("Recherche 2opt premier"),
+    RECHERCHESOMMETPREMIER("Recherche sommet premier"),
+    RECHERCHESUCCPREMIER("Recherche successeur premier"),
+    RECHERCHESUCCMEILLEUR("Recherche successeur meilleur"),
+    INSERTIONPROCHE("Insertion proche"),
+    INSERTIONLOIN("Insertion loin");
+
+    private final String nomAlgoTourne;
+
+    NomAlgoTourne(String nomAlgoTourne)
+    {
+        this.nomAlgoTourne = nomAlgoTourne;
+    }
+
+    public String getNomAlgoTourne()
+    {
+        return nomAlgoTourne;
+    }
 }
