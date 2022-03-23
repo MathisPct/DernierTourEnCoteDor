@@ -32,6 +32,8 @@ public class TourneControler implements Initializable
     public Label nomTournee;
     @FXML
     public VBox tourneContainer;
+    @FXML
+    public Label tailleVilles;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle)
@@ -50,6 +52,7 @@ public class TourneControler implements Initializable
             this.champCout.setText(String.valueOf(tourneEffectue.getCout()));
             this.nomTournee.setText(this.selectTourne.getSelectionModel().getSelectedItem().getNomAlgoTourne());
             afficherVilles(tourneEffectue.getTourneesVilles());
+            this.tailleVilles.setText(String.valueOf(tourneEffectue.getTourneesVilles().size()));
         }catch (Exception e)
         {
             UtilsIHM.afficherErreur(e.getMessage());

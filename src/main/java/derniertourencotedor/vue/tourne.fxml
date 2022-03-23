@@ -27,7 +27,7 @@
                                     <Font size="16.0" />
                                  </font>
                               </Label>
-                              <Label fx:id="champCout" prefHeight="20.0" prefWidth="68.0" text="Non calculé" />
+                              <Label fx:id="champCout" prefHeight="20.0" prefWidth="68.0" text="Non calculé" textFill="#e10000" />
                            </children>
                         </HBox>
                      </children>
@@ -36,6 +36,12 @@
                      <children>
                         <Label text="Liste des villes de la tournée" />
                         <ListView fx:id="listVilles" prefHeight="282.0" prefWidth="363.0" />
+                        <HBox spacing="5.0">
+                           <children>
+                              <Label text="Nombre de ville: " />
+                              <Label fx:id="tailleVilles" text="0" />
+                           </children>
+                        </HBox>
                      </children>
                   </VBox>
                </children>
