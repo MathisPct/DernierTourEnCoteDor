@@ -87,9 +87,9 @@ public class Tourne
      */
     public void insererVilleApresVilleProche(Ville villeAInserer)
     {
-        float coutMinimum = Float.POSITIVE_INFINITY;
+        double coutMinimum = Double.POSITIVE_INFINITY;
         int indexOuInsererVille = 0;
-        float coutDetour;
+        double coutDetour;
         for(int indexVille = 0; indexVille < this.getTourneesVilles().size(); indexVille++)
         {
             Ville ville1 = this.getTourneesVilles().get(indexVille);
@@ -128,14 +128,9 @@ public class Tourne
      */
     public void retournerTroncon(int indexDebutTroncon, int indexFinTroncon)
     {
-        ArrayList<Ville> newList = new ArrayList<>();
-        for(int i=0;i<indexDebutTroncon;i++) newList.add(this.tourneesVilles.get(i));
-        for(int i=indexFinTroncon;i>=indexDebutTroncon;i--) newList.add(this.tourneesVilles.get(i));
-        for(int i=indexFinTroncon+1;i<this.tourneesVilles.size();i++) newList.add(this.tourneesVilles.get(i));
-        /*//on récupère les villes du tronçon à inverser
+        //on récupère les villes du tronçon à inverser
         List<Ville> tronconInverse = getTourneesVilles().subList(indexDebutTroncon, indexFinTroncon+1);
         //on inverse les villes du tronçon
-        Collections.reverse(tronconInverse);*/
-        this.tourneesVilles = newList;
+        Collections.reverse(tronconInverse);
     }
 }
