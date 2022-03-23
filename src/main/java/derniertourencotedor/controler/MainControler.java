@@ -1,5 +1,6 @@
 package derniertourencotedor.controler;
 
+import derniertourencotedor.App;
 import derniertourencotedor.modele.VillesParser;
 import derniertourencotedor.modele.algo.AlgoTourne;
 import derniertourencotedor.modele.algo.fabrique.FabriqueAlgoTourne;
@@ -14,6 +15,9 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
+import javafx.stage.FileChooser;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -31,6 +35,8 @@ public class MainControler implements Initializable
     public ListView listVilles;
     @FXML
     public Label nomTournee;
+    @FXML
+    public VBox tourneContainer;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle)

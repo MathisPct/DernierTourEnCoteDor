@@ -7,36 +7,37 @@
 
 <AnchorPane xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="derniertourencotedor.controler.MainControler">
    <children>
-      <VBox alignment="CENTER" layoutX="7.0" layoutY="14.0">
+      <VBox alignment="CENTER" layoutX="13.0" layoutY="17.0">
          <children>
-            <Label fx:id="nomTournee" text="Nom de la tournée">
+            <Label fx:id="nomTournee" text="Choisir l'algorithme">
                <font>
                   <Font size="31.0" />
                </font>
             </Label>
-            <HBox spacing="10.0">
+            <HBox spacing="30.0">
                <children>
-                  <VBox spacing="20.0">
+                  <VBox fx:id="tourneContainer" prefHeight="300.0" prefWidth="216.0" spacing="20.0">
                      <children>
-                        <ComboBox fx:id="selectTourne" prefHeight="26.0" prefWidth="176.0" />
-                        <Button mnemonicParsing="false" onAction="#calculerTourner" prefHeight="26.0" prefWidth="175.0" text="Calculer coût" />
-                        <HBox alignment="CENTER" spacing="5.0">
+                        <ComboBox fx:id="selectTourne" prefHeight="26.0" prefWidth="224.0" />
+                        <Button mnemonicParsing="false" onAction="#calculerTourner" prefHeight="26.0" prefWidth="226.0" text="Calculer coût" />
+                        <HBox alignment="CENTER_LEFT" prefHeight="26.0" prefWidth="181.0" spacing="5.0">
                            <children>
-                              <Label alignment="CENTER" prefHeight="26.0" prefWidth="133.0" text="Coût de la tournée" underline="true">
+                              <Label alignment="CENTER" prefHeight="26.0" prefWidth="141.0" text="Coût de la tournée:" underline="true" wrapText="true">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
                               </Label>
-                              <Label fx:id="champCout" text="Coût ">
-                                 <font>
-                                    <Font size="14.0" />
-                                 </font>
-                              </Label>
+                              <Label fx:id="champCout" prefHeight="20.0" prefWidth="68.0" text="Non calculé" />
                            </children>
                         </HBox>
                      </children>
                   </VBox>
-                  <ListView fx:id="listVilles" prefHeight="282.0" prefWidth="363.0" />
+                  <VBox alignment="CENTER">
+                     <children>
+                        <Label text="Liste des villes de la tournée" />
+                        <ListView fx:id="listVilles" prefHeight="282.0" prefWidth="363.0" />
+                     </children>
+                  </VBox>
                </children>
                <padding>
                   <Insets bottom="20.0" left="20.0" right="20.0" />
