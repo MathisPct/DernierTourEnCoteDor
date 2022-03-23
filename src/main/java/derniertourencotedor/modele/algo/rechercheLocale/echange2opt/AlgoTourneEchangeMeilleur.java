@@ -7,9 +7,9 @@ import derniertourencotedor.modele.algo.rechercheLocale.AlgoTourneRechercheLocal
 
 import java.util.ArrayList;
 
-public class AlgoTourneEchangePremier extends AlgoTourneRechercheLocale
+public class AlgoTourneEchangeMeilleur extends AlgoTourneRechercheLocale
 {
-    public AlgoTourneEchangePremier(VillesParser villesService, Tourne tourneAOptimiser)
+    public AlgoTourneEchangeMeilleur(VillesParser villesService, Tourne tourneAOptimiser)
     {
         super(villesService, tourneAOptimiser);
     }
@@ -19,19 +19,19 @@ public class AlgoTourneEchangePremier extends AlgoTourneRechercheLocale
     {
         ArrayList<Ville> villes = new ArrayList<>(tourneCourante.getTourneesVilles());
         Tourne tourne = new Tourne(villes);
-        for (int i = 0; i < tourneCourante.tailleTourne() - 1; i++)
+        for (int i = 0; i < tourneCourante.tailleTourne(); i++)
         {
-            for (int j = 0; j < tourneCourante.tailleTourne() - 1; j++)
+            for (int j = 0; j < tourneCourante.tailleTourne(); j++)
             {
                 //toute position j > i+1
                 if(j > i + 1)
                 {
                     float distance1 =
-                            villes.get(i).distanceAvecVille(villes.get(i+1)) + villes.get(j).distanceAvecVille(villes.get(j+1));
+                            villes.get(i).distanceAvecVille(villes.get(i+1)) + villes.get(j%tourneCourante.tailleTourne()).distanceAvecVille(villes.get((j+1)%tourneCourante.tailleTourne()));
                     float distance2 =
-                            villes.get(i).distanceAvecVille(villes.get(j)) + villes.get(i+1).distanceAvecVille(villes.get(j+1));
+                            villes.get(i).distanceAvecVille(villes.get(j%tourneCourante.tailleTourne())) + villes.get(i+1).distanceAvecVille(villes.get((j+1)%tourneCourante.tailleTourne()));
                     if(distance1 > distance2)
-                        tourne.retournerTroncon(i+1, j);
+                        tourne.retournerTroncon(i+1, j%tourneCourante.tailleTourne());
                 }
             }
         }

@@ -7,7 +7,7 @@ import derniertourencotedor.modele.algo.AlgoTourneCroissante;
 import derniertourencotedor.modele.algo.AlgoTournePlusProcheVoisin;
 import derniertourencotedor.modele.algo.insertion.AlgoTourneInsertionLoin;
 import derniertourencotedor.modele.algo.insertion.AlgoTourneInsertionProche;
-import derniertourencotedor.modele.algo.rechercheLocale.echange2opt.AlgoTourneEchangePremier;
+import derniertourencotedor.modele.algo.rechercheLocale.echange2opt.AlgoTourneEchangeMeilleur;
 import derniertourencotedor.modele.algo.rechercheLocale.sommets.AlgoTourneRechercheSommetPremier;
 import derniertourencotedor.modele.algo.rechercheLocale.successeur.AlgoTourneRechercheSuccMeilleur;
 import derniertourencotedor.modele.algo.rechercheLocale.successeur.AlgoTourneRechercheSuccPremier;
@@ -47,8 +47,8 @@ public class FabriqueAlgoTourne
                 algoTourne = new AlgoTourneRechercheSommetPremier(villesParser,
                         new AlgoTournePlusProcheVoisin(villesParser).effectuerTourne());
                 break;
-            case RECHERCHE2OPTPREMIER:
-                algoTourne = new AlgoTourneEchangePremier(villesParser,
+            case RECHERCHE2OPTMEILLEUR:
+                algoTourne = new AlgoTourneEchangeMeilleur(villesParser,
                         new AlgoTournePlusProcheVoisin(villesParser).effectuerTourne());
                 break;
         }

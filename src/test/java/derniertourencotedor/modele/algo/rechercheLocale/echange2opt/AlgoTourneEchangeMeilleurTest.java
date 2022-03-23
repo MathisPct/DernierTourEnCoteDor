@@ -11,7 +11,7 @@ import org.junit.jupiter.api.Test;
 import java.io.File;
 import java.io.FileNotFoundException;
 
-class AlgoTourneEchangePremierTest
+class AlgoTourneEchangeMeilleurTest
 {
     @Test
     void testEffectuerTourne() throws FileNotFoundException {
@@ -19,9 +19,9 @@ class AlgoTourneEchangePremierTest
         AlgoTourne tournePlusProcheVoisin = new AlgoTournePlusProcheVoisin(villesParserAvecFichier);
         Tourne tourne = tournePlusProcheVoisin.effectuerTourne();
         AlgoTourneRechercheLocale tourneRechercheLocale =
-                new AlgoTourneEchangePremier(villesParserAvecFichier, tourne);
+                new AlgoTourneEchangeMeilleur(villesParserAvecFichier, tourne);
         Tourne tourneObtenu = tourneRechercheLocale.effectuerTourne();
         float coutObtenu = tourneObtenu.getCout();
-        Assert.assertEquals(562.83, coutObtenu, 0.1f);
+        Assert.assertEquals(557.60, coutObtenu, 0.1f);
     }
 }

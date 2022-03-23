@@ -9,7 +9,7 @@ public enum NomAlgoTourne
     ALEATOIRE("Aléatoire"),
     PLUSPROCHEVOISIN("Plus proche voisin"),
     CROISSANTE("Croissante"),
-    RECHERCHE2OPTPREMIER("Recherche 2opt premier"),
+    RECHERCHE2OPTMEILLEUR("Recherche 2opt meilleur"),
     RECHERCHESOMMETPREMIER("Recherche sommet premier quelconque"),
     RECHERCHESUCCPREMIER("Recherche successeur premier"),
     RECHERCHESUCCMEILLEUR("Recherche successeur meilleur"),
