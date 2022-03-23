@@ -35,7 +35,7 @@ public class App extends Application {
     }
 
     /**
-     * Switch la scène vers l'écran principal après la connexion
+     * Permet de switcher de scene
      */
     public static void switchScene(Scene scene) {
         if(App.stage != null) {
